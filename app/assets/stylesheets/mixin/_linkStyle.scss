@@ -1,0 +1,9 @@
+@mixin linkStyle() {
+  color: $color_black-text;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    color: $color_orange-main;
+  }
+}

@@ -1,0 +1,14 @@
+%header.header
+  %h1.header__logo
+    = link_to root_path do
+      = image_tag "sakenomo_logo.png", size: "125x30", alt: "さけのも", class: "header__logoImage"
+
+  = form_with url: root_path, method: :get, local: true, class: "header__searchForm" do |f|
+    = f.text_field :keyword, placeholder: "イベント検索", autocomplete: "off", class: "header__searchField"
+    = button_tag type: "submit", class: "header__searchBtn" do
+      %i.fas.fa-search
+
+  .header__login
+    = link_to "ログイン ", root_path, class: "header__loginBtn"
+    %span.header__loginPartition 	&nbsp; &verbar;	&nbsp;
+    = link_to "新規登録", root_path, class: "header__RegisterBtn"
