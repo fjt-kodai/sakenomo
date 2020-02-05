@@ -1,2 +1,18 @@
-%h1 Events#index
-%p Find me in app/views/events/index.html.haml
+.eventsIndex
+  = render "/shared/header"
+  = render "/shared/introduction"
+  .eventsIndex__main
+    .eventsIndex__leftContent
+      = render partial: "/shared/title", locals: {title: "開催が近いイベント"}
+      .eventsIndex__events
+        = render "/shared/event"
+      = render partial: "/shared/bottomLink", locals: {link: root_path, title: "イベント一覧"}
+    .eventsIndex__rightContents
+      .eventsIndex__rightTopContent
+        = render "/shared/functions"
+      .eventsIndex__rightBottomContent
+        = render partial: "/shared/title", locals: {title: "最近のコメント"}
+        .eventsIndex__comments
+          = render "/shared/comment"
+        = render partial: "/shared/bottomLink", locals: {link: root_path, title: "コメント一覧"}
+  = render "/shared/footer"

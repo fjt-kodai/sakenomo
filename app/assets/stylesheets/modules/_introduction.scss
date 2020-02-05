@@ -1,0 +1,60 @@
+.introduction {
+  position: relative;
+
+  &__image {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+  }
+
+  &__contents {
+    width: 600px;
+    height: 60%;
+    padding: 40px;
+    background: $color_white-introduction;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column;
+  }
+
+  &__catchCopy {
+    color: $color_orange-main;
+    letter-spacing: 4px;
+  }
+
+    &__mainCopy {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    &__subCopy {
+      font-size: 12px;
+    }
+
+    &__registerBtn {
+      display: block;
+      background-color: $color_orange-main;
+      height: 40px;
+      width: 160px;
+      line-height: 42px;
+      border-radius: 20px;
+      color: $color_white;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      transition: all .2s;
+
+      &:hover {
+        background-color: $color_orange-sub;
+      }
+    }
+}
