@@ -1,0 +1,101 @@
+.eventPlanner {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: solid 1px $color_grey-border;
+
+  &__dateBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    width: 130px;
+    height: 90px;
+  }
+
+      &__date {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      &__time {
+        font-size: 12px;
+      }
+
+      &__label {
+        background-color: $color_red-label;
+        height: 20px;
+        font-size: 10px;
+        font-weight: bold;
+        line-height: 22px;
+        text-align: center;
+        width: 60px;
+        color: $color_white;
+        letter-spacing: 1px;
+        margin-top: 12px;
+
+        &--yet {
+          background-color: $color_green-label;
+          height: 20px;
+          font-size: 10px;
+          font-weight: bold;
+          line-height: 22px;
+          text-align: center;
+          width: 60px;
+          color: $color_white;
+          letter-spacing: 1px;
+          margin-top: 12px;
+        }
+      }
+
+  &__contentBox {
+    display: flex;
+    align-items: center;
+    width: 430px;
+    margin-right: 20px;
+  }
+
+    &__imageBox {
+      padding: 0 20px;
+      border-left: solid 1px $color_grey-border;
+    }
+
+      &__image {
+        display: block;
+        width: 90px;
+        height: 90px;
+        border-radius: 4px;
+      }
+
+    &__descriptionBox {
+      width: 100%;
+      height: 90px;
+    }
+
+      &__title {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 7px;
+        letter-spacing: 1px;
+        @include linkStyle ();
+      }
+
+      &__detail {
+        color: $color_grey-text;
+      }
+
+    &__EditBtn {
+      display: block;
+      width: 50px;
+      height: 30px;
+      font-size: 14px;
+      line-height: 32px;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: bold;
+      background-color: $color_orange-main;
+      color: $color_white;
+      letter-spacing: 1.5px;
+    }
+}

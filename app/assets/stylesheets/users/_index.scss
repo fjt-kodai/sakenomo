@@ -1,9 +1,14 @@
-.eventsIndex {
+.usersIndex {
   width: 100%;
   min-height: 100vh;
   padding-top: 60px;
   display: flex;
   flex-flow: column;
+  align-items: center;
+
+  &__image {
+    margin-right: 14px;
+  }
 
   &__main {
     flex: 1;
@@ -15,8 +20,16 @@
       padding: 60px 40px 40px 30px;
     }
 
+      &__leftTopContent {
+        margin-bottom: 60px;
+      }
+
       &__rightTopContent {
         padding: 60px 30px 30px 40px;
+      }
+
+      &__rightMiddleContent {
+        padding: 30px 30px 40px 40px;
       }
 
       &__rightBottomContent {

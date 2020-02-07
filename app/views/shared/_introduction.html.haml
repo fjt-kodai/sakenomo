@@ -1,7 +1,7 @@
 .introduction
-  = image_tag "introduction_background.jpg", alt: "introduction_photo", class: "introduction__image" # あとでサイズ差し替え
+  = image_tag "cheers_grey.jpg", alt: "image", class: "introduction__image"
   .introduction__contents
     .introduction__catchCopy
       %h2.introduction__mainCopy 定時の後は、酒を飲もう。
       %h3.introduction__subCopy 誰もが楽しめる飲み会のために、幹事と参加者をサポートします。
-    = link_to "新規登録", root_path, class: "introduction__registerBtn"
+    = link_to "新規登録", new_user_registration_path, class: "introduction__registerBtn"

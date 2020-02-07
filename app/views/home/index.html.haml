@@ -1,18 +1,18 @@
-.eventsIndex
-  = render "/shared/header"
+.homeIndex
+  = render "/shared/header-notLoggedIn"
   = render "/shared/introduction"
-  .eventsIndex__main
-    .eventsIndex__leftContent
+  .homeIndex__main
+    .homeIndex__leftContent
       = render partial: "/shared/title", locals: {title: "開催が近いイベント"}
-      .eventsIndex__events
+      .homeIndex__events
         = render "/shared/event"
       = render partial: "/shared/bottomLink", locals: {link: root_path, title: "イベント一覧"}
-    .eventsIndex__rightContents
-      .eventsIndex__rightTopContent
+    .homeIndex__rightContents
+      .homeIndex__rightTopContent
         = render "/shared/functions"
-      .eventsIndex__rightBottomContent
+      .homeIndex__rightBottomContent
         = render partial: "/shared/title", locals: {title: "最近のコメント"}
-        .eventsIndex__comments
+        .homeIndex__comments
           = render "/shared/comment"
         = render partial: "/shared/bottomLink", locals: {link: root_path, title: "コメント一覧"}
   = render "/shared/footer"
