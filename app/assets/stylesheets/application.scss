@@ -26,10 +26,12 @@ body {
 @import "modules/footer";
 @import "modules/introduction";
 @import "modules/event";
+@import "modules/eventPlanner";
 @import "modules/functions";
 @import "modules/comment";
 @import "modules/title";
 @import "modules/bottomLink";
+@import "modules/user";
 
-@import "events/index";
-
+@import "home/index";
+@import "users/index";
