@@ -1,0 +1,100 @@
+#calendar {
+  max-width: 290px;
+}
+
+.fc-left {
+  font-size: 13px;
+}
+
+
+.fc-toolbar {
+  margin-bottom: 8px !important;
+}
+
+.fc-right {
+  margin-top: 3px;
+}
+
+.fc-day-header {
+  font-size: 12px;
+}
+
+.fc-button {
+  background-image: none !important;
+  background-color: $color_grey-box !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.fc-prev-button {
+  margin-right: 3px !important;
+}
+
+.fc-sun {
+  color: $color_blue-calendar;
+}
+
+.fc-sat {
+  color: $color_red-calendar;
+}
+
+.fc-day-number {
+  font-size: 11px
+}
+
+.fc-day-header {
+  width: 40px !important;
+}
+
+.fc-week {
+  height: 40px !important;
+}
+
+.fc-day {
+  width: 40px !important;
+}
+
+.calendar {
+
+  &__eventInfoBox {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+    &__plannerLabel {
+      height: 14px;
+      width: 14px;
+      border-radius: 2px;
+      background-color: $color-red-label;
+      margin-right: 4px;
+    }
+
+    &__participationLabel {
+      height: 14px;
+      width: 14px;
+      border-radius: 2px;
+      background-color: $color-green-label;
+      margin-right: 4px
+    }
+
+    &__eventLabel {
+      height: 14px;
+      width: 14px;
+      border-radius: 2px;
+      background-color: $color-orange-main;
+      margin-right: 4px
+    }
+    
+    &__text {
+      font-size: 11px;
+      line-height: 11px;
+      height: 11px;
+      margin-right: 10px;
+    }
+
+
+
+}

@@ -1,18 +1,21 @@
 .homeIndex
   = render "/shared/header-notLoggedIn"
   = render "/shared/introduction"
+
   .homeIndex__main
     .homeIndex__leftContent
       = render partial: "/shared/title", locals: {title: "開催が近いイベント"}
       .homeIndex__events
         = render "/shared/event"
       = render partial: "/shared/bottomLink", locals: {link: root_path, title: "イベント一覧"}
+
     .homeIndex__rightContents
       .homeIndex__rightTopContent
-        = render "/shared/functions"
+        = render "/shared/calendar-notLoggedIn"
       .homeIndex__rightBottomContent
         = render partial: "/shared/title", locals: {title: "最近のコメント"}
         .homeIndex__comments
           = render "/shared/comment"
         = render partial: "/shared/bottomLink", locals: {link: root_path, title: "コメント一覧"}
+
   = render "/shared/footer"

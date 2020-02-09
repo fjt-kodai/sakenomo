@@ -1,7 +1,11 @@
 .bottomLink {
-  height: 40px;
-  font-size: 12px;
-  line-height: 40px;
-  float: right;
-  @include linkStyle ();
+  display: flex;
+  justify-content: flex-end;
+
+  &__text{
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    @include linkStyle ();
+  }
 }
