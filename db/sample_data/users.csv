@@ -1,0 +1,11 @@
+id,name,email,icon,password
+1,Fujita Kodai,fujitakodai@test,user_icon_4.png,fujitakodai
+2,Tanaka Taro,tanakataro@test,user_icon_12.png,tanakataro
+3,Yamada Hanako,yamadahanako@test,user_icon_1.png,yamadahanako
+4,Suzuki Ichiro,suzukiichiro@test,user_icon_6.png,suzukiichiro
+5,Takahashi Kazuma,takahashikazuma@test,user_icon_11.png,takahashikazuma
+6,Ito Tadashi,itotadashi@test,user_icon_5.png,itotadashi
+7,Watanabe Kaori,watanabekaori@test,user_icon_3.png,watanabekaori
+8,Abe Kanako,abekanako@test,user_icon_2.png,abekanako
+9,Hashimoto Miku,hashimotomiku@test,user_icon_10.png,hashimotomiku
+10,Matsui Shintaro,matsuishintaro@test,user_icon_12.png,matsuishintaro
