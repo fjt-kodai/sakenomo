@@ -1,0 +1,31 @@
+.usersShow.wrapper
+
+  = render "/shared/header"
+  = image_tag "beer_short.jpg", alt: "image", size: "1107x300", class: "usersShow__image"
+
+  .usersShow__main.main
+    .usersShow__leftContent
+      .usersShow__leftTopContent
+        = render partial: "/shared/title", locals: {title: "あなたが幹事のイベント"}
+        .usersShow__events
+          = render partial: "/shared/event", collection: @organized_events
+      .usersShow__leftMiddleContent
+        = render partial: "/shared/title", locals: {title: "あなたが参加予定のイベント"}
+        .usersShow__events
+          = render partial: "/shared/event", collection: @participating_events
+      .usersShow__leftBottomContent
+        = render partial: "/shared/title", locals: {title: "開催が近いイベント"}
+        .usersShow__events
+          = render partial: "/shared/event", collection: @events
+        = render partial: "/shared/bottomLink", locals: {link: root_path, title: "イベント一覧"}
+
+    .usersShow__rightContents
+      .usersShow__rightTopContent
+        = render "/shared/calendar"
+      .usersShow__rightBottomContent
+        = render partial: "/shared/title", locals: {title: "最近のコメント"}
+        .usersShow__comments
+          = render "/shared/comment"
+        = render partial: "/shared/bottomLink", locals: {link: root_path, title: "コメント一覧"}
+
+  = render "/shared/footer"

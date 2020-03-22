@@ -1,0 +1,108 @@
+.registrationsNew {
+
+  &__main {
+    background-color: $color_grey-box;
+    padding: 40px;
+  }
+
+    &__contents {
+      width: 840px;
+      background-color: $color_white;
+      margin: 0 auto;
+      padding: 40px;
+      box-shadow: 0 0 3px rgba(100, 100, 100, 0.2);
+    }
+
+      &__titleBox {
+        width: 720px;
+        margin: 0 auto;
+        text-align: center;
+        border-bottom: 1px solid $color_grey-border;
+        padding-bottom: 40px;
+      }
+
+        &__title {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+
+        &__note {
+          font-size: 12px;
+
+          a {
+            text-decoration: underline;
+            color: $color_orange-main;
+          }
+        }
+
+      &__snsAuthBox {
+        width: 720px;
+        margin: 0 auto;
+        border-bottom: 1px solid $color_grey-border;
+        padding: 40px 0;
+      }
+
+      &__mailAuthBox {
+        width: 720px;
+        margin: 0 auto;
+        padding-top: 40px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: center;
+
+        &--test {
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+        &__formBox {
+          label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 4px;
+          }
+
+          input {
+            width: 340px;
+            height: 40px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            @include form_style ();
+            @include placeholder_color($color_grey-text);
+          }
+        }
+
+        &__btnBox {
+          position: relative;
+          margin-top: 20px;
+        }
+
+          &__Btn {
+            width: 260px;
+            height: 50px;
+            font-size: 14px;
+            line-height: 50px;
+            color: $color_white;
+            font-weight: bold;
+            border-radius: 4px;
+            border-style: none;
+            background-color: $color_orange-main;
+            padding-left: 20px;
+
+            &--test {
+              background-color: $color_red-label;
+            }
+          }
+
+          &__icon {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            font-size: 18px;
+            color: $color_white;
+          }
+}

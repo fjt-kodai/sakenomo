@@ -1,21 +1,32 @@
-#account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 Log in
-      %h5 登録しているユーザーでログイン
-      = render "devise/shared/links"
-    .account-page__inner--right.user-form
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .field
-          .field-label
-            = f.label :email
-          .field-input
-            = f.email_field :email, autofocus: true
-          .field
-            .field-label
-              = f.label :password
-              %i (英数字8文字以上)
-            .field-input
-              = f.password_field :password, autocomplete: "off"
-          .actions
-            = f.submit "Log in", class: 'btn'
+.sessionsNew.wrapper
+  = render "/shared/header"
+
+  .sessionsNew__main.main
+    .sessionsNew__contents
+
+      .sessionsNew__titleBox
+        %h2.sessionsNew__title ログイン
+        %p.sessionsNew__note
+          %span 未登録の方は
+          = link_to "新規登録", new_user_registration_path
+          %span してください。
+
+      .sessionsNew__snsAuthBox
+        = render partial: "/shared/snsAuth", locals: {str: "ログイン"}
+
+      = form_with model: @user, url: user_session_path, class: "sessionsNew__mailAuthBox new_user", id: "new_user", local: true do |f|
+        = devise_error_messages!
+        .sessionsNew__formBox
+          = f.email_field :email, placeholder: "メールアドレス"
+        .sessionsNew__formBox
+          = f.password_field :password, placeholder: "パスワード"
+        .sessionsNew__btnBox
+          = f.submit "メールアドレスでログイン", class: "sessionsNew__Btn"
+          %i.far.fa-envelope.sessionsNew__icon
+      = form_with model: @user, url: user_session_path, class: "sessionsNew__mailAuthBox--test new_user", id: "new_user", local: true do |f|
+        .sessionsNew__btnBox
+          = f.hidden_field :email, value: "test@example.com"
+          = f.hidden_field :password, value: "test1234"
+          = f.submit "テストユーザーでログイン", class: "sessionsNew__Btn sessionsNew__Btn--test"
+          %i.fas.fa-user.sessionsNew__icon
+  = render "/shared/footer"

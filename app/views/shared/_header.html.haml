@@ -1,31 +1,44 @@
 %header.header
   .header__leftContent
     %h1.header__logo
-      = link_to users_path do
+      = link_to '/' do
         = image_tag "sakenomo_logo.png", size: "125x30", alt: "さけのも", class: "header__logoImage"
 
-    = form_with url: root_path, method: :get, local: true, class: "header__searchForm" do |f|
-      = f.text_field :keyword, placeholder: "イベント検索", autocomplete: "off", class: "header__searchField"
-      = button_tag type: "submit", class: "header__searchBtn" do
-        %i.fas.fa-search
+    - unless current_page?(new_user_registration_path) || current_page?(new_user_session_path)
 
-    %nav.header__nav
-      %ul.header__navMenu
-        %li
-          = link_to "企画する", root_path, class: "header__navContent"
-        %li
-          = link_to "参加する", root_path, class: "header__navContent"
-        %li
-          = link_to "過去のお店を調べる", root_path, class: "header__navContent"
+      = form_with url: root_path, method: :get, local: true, class: "header__searchForm" do |f|
+        = f.text_field :keyword, placeholder: "イベント検索", autocomplete: "off", class: "header__searchField"
+        = button_tag type: "submit", class: "header__searchBtn" do
+          %i.fas.fa-search
+
+      %nav.header__nav
+        %ul.header__navMenu
+          - if user_signed_in?
+            %li
+              = link_to new_event_path, class: "header__navContent", id: "header__eventsNew", remote: true do
+                %span 飲み会を
+                %span.header__navContent--textBold 企画
+                %span する
+          %li
+            = link_to root_path, class: "header__navContent" do
+              %span 飲み会に
+              %span.header__navContent--textBold  参加
+              %span する
 
   .header__rightContent
-    .header__user
-      .header__userBox
-        = image_tag "usericon.png", alt: "user_icon", class: "header__userIcon"
-        %p.header__userName
-          = current_user.name
-        %ul.header__userBox__Menu
-          %li
-            = link_to "アカウント設定", root_path, class: "header__userMenuContent"
-          %li
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__userMenuContent" 
+    - if user_signed_in?
+      .header__user
+        .header__userBox
+          = image_tag current_user.icon, alt: "user_icon", class: "header__userIcon"
+          %p.header__userName
+            = current_user.name
+          %ul.header__userBox__Menu
+            %li
+              = link_to "アカウント設定", root_path, class: "header__userMenuContent"
+            %li
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__userMenuContent" 
+    - else
+      .header__login
+      = link_to "ログイン ", new_user_session_path, class: "header__loginBtn"
+      %span.header__loginPartition 	&nbsp; &verbar;	&nbsp;
+      = link_to "新規登録", new_user_registration_path, class: "header__RegisterBtn"

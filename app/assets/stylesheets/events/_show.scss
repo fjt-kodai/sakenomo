@@ -1,0 +1,347 @@
+.eventsShow {
+
+  &__main {
+    background-color: $color_grey-box;
+    padding: 40px;
+  }
+
+    &__contentsBox {
+      width: 840px;
+      background-color: $color_white;
+      margin: 0 auto;
+      padding: 40px 60px;
+      box-shadow: 0 0 3px rgba(100, 100, 100, 0.2);
+    }
+
+      &__titleBox {
+        font-size: 24px;
+        vertical-align: bottom;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 1px solid $color_grey-border;
+        padding-bottom: 38px;
+      }
+
+      &__detailBox {
+        border-bottom: 1px solid $color_grey-border;
+        padding: 40px;
+      }
+
+        &__detailTable {
+          width: 100%;
+
+          tr {
+            height: 60px;
+          }
+
+            th {
+              width: 20%;
+              font-size: 16px;
+              color: $color_orange-main;
+              text-align: left;
+              padding-left: 30px;
+              position: relative;
+            
+              &:after {
+                content: "";
+                position: absolute;
+                bottom: 50%;
+                left: 0;
+                transform: translateY(50%);
+                width: 4px;
+                height: 30px;
+                background-color: $color_orange-main;
+              }
+            }
+
+            td {
+              width: 70%;
+              font-size: 16px;
+              font-weight: bold;
+              text-align: center;
+            }
+        }
+
+          &__defaultShow {
+            cursor: pointer;
+
+            &:hover i {
+              color: $color_orange-main;
+            }
+          }
+
+            &__editBtn {
+              font-size: 14px;
+              color: grey;
+
+              &--hidden {
+                visibility: hidden;
+              }
+            }
+
+            &__textForm {
+              position: relative;
+            }
+
+            &__timesForm {
+              position: relative;
+            }
+
+              &__textField {
+                width: 80%;
+                height: 36px;
+                padding: 10px 40px 10px 10px;
+                border-radius: 4px;
+                font-size: 12px;
+                @include form_style ();
+                @include placeholder_color($color_grey-text);
+              }
+
+              #event_start_time_4i {
+                width: 50px;
+                height: 36px;
+                font-size: 12px;
+                @include form_style ();
+              }
+
+              #event_start_time_5i {
+                width: 50px;
+                height: 36px;
+                font-size: 12px;
+                @include form_style ();
+              }
+
+              #event_end_time_4i {
+                width: 50px;
+                height: 36px;
+                font-size: 12px;
+                @include form_style ();
+              }
+
+              #event_end_time_5i {
+                width: 50px;
+                height: 36px;
+                font-size: 12px;
+                @include form_style ();
+              }
+
+              &__crossBtn {
+                position: absolute;
+                top: 10px;
+                right: 52px;
+                background-color: transparent;
+                border: none;
+                padding: 0px 4px;
+                font-size: 16px;
+                @include link_style ();
+                color: $color_grey-text;
+                outline: none;
+              }
+
+            &__submitBtn {
+              background-color: $color_orange-main;
+              color: $color_white;
+              font-size: 14px;
+              border-radius: 4px;
+              height: 30px;
+              line-height: 30px;
+              width: 60px;
+              font-weight: bold;
+              border-style: none;
+              cursor: pointer;
+            }
+
+      &__venueBox {
+        padding: 40px;
+        border-bottom: 1px solid $color_grey-border;
+      }
+
+      &__venueNameTable {
+        width: 100%;
+
+        tr {
+          height: 60px;
+        }
+
+          th {
+            width: 20%;
+            font-size: 16px;
+            color: $color_orange-main;
+            text-align: left;
+            padding-left: 30px;
+            position: relative;
+          
+            &:after {
+              content: "";
+              position: absolute;
+              bottom: 50%;
+              left: 0;
+              transform: translateY(50%);
+              width: 4px;
+              height: 30px;
+              background-color: $color_orange-main;
+            }
+          }
+
+          td {
+            width: 70%;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+          }
+      }
+
+      &__BtnCell {
+        width: 10%;
+      }
+
+      &__venueEditBtn {
+        display: block;
+        background-color: $color_orange-main;
+        color: $color_white;
+        font-size: 14px;
+        border-radius: 4px;
+        height: 30px;
+        line-height: 32px;
+        width: 60px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+        &__venueDetailBox {
+          display: flex;
+          padding: 20px;
+          margin: 20px;
+          background-color: $color_grey-box;
+          border-radius: 6px;
+        }
+
+          &__venueImage {
+            height: 200px;
+            width: 200px;
+            border-radius: 6px;
+          }
+
+          &__venueTable {
+            margin-left: 40px;
+
+            tr {
+              height: 36px;
+              font-size: 12px;
+            }
+
+            th {
+              width: 30%;
+              text-align: left;
+            }
+
+            td {
+              border-bottom: solid 1px rgb(221, 221, 221);
+              padding: 8px;
+            }
+
+          }
+
+        &__map {
+          height: 300px;
+          margin: 20px;
+          border-radius: 6px;
+        }
+
+        &__usersBox {
+          padding: 40px 40px 0px;
+        }
+
+        &__usersTable {
+          width: 100%;
+          tr {
+            height: 60px;
+          }
+        }
+        &__organizerIndex {
+          width: 20%;
+          font-size: 16px;
+          color: $color_orange-main;
+          text-align: left;
+          padding-left: 30px;
+          position: relative;
+        
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+            transform: translateY(50%);
+            width: 4px;
+            height: 30px;
+            background-color: $color_orange-main;
+          }
+        }
+
+        &__organizer {
+          width: 80%;
+          text-align: center;
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        &__organizerIcon {
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          margin-right: 12px;
+          vertical-align: bottom;
+        }
+
+        &__organizerName {
+          height: 26px;
+          font-size: 16px;
+        }
+
+        &__participantIcon {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin-right: 10px;
+          vertical-align: bottom;
+        }
+
+        &__participantsIndex {
+          vertical-align: top;
+          width: 20%;
+          font-size: 16px;
+          color: $color_orange-main;
+          text-align: left;
+          padding-left: 30px;
+          padding-top: 30px;
+          position: relative;
+        
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 27px;
+            width: 4px;
+            height: 30px;
+            background-color: $color_orange-main;
+          }
+        }
+
+        &__participants {
+          display: flex;
+          flex-wrap: wrap;
+          padding-top: 30px;
+          vertical-align: top;
+        }
+
+        &__participant {
+          padding: 0 20px 20px 0
+        }
+
+        &__participantName {
+          height: 20px;
+          font-size: 13px;
+        }
+        
+}

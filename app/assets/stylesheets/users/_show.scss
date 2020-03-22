@@ -1,9 +1,4 @@
-.usersIndex {
-  width: 100%;
-  min-height: 100vh;
-  padding-top: 60px;
-  display: flex;
-  flex-flow: column;
+.usersShow {
   align-items: center;
 
   &__image {
@@ -11,7 +6,6 @@
   }
 
   &__main {
-    flex: 1;
     display: flex;
     justify-content: center;
   }
@@ -21,6 +15,10 @@
     }
 
       &__leftTopContent {
+        margin-bottom: 60px;
+      }
+
+      &__leftMiddleContent {
         margin-bottom: 60px;
       }
 
