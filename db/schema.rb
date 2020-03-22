@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 202003014) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.date "date", null: false
+    t.date "date"
     t.time "start_time"
     t.time "end_time"
     t.integer "fee"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 202003014) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email"
-    t.string "icon", default: "", null: false
-    t.string "encrypted_password", default: "usericon.png", null: false
+    t.string "icon", default: "user_icon_default.png", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
