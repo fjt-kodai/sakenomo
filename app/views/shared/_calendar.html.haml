@@ -1,0 +1,12 @@
+.calendar#calendar
+.calendar__eventInfoBox
+  - if user_signed_in?
+    .calendar__organizerLabel
+    %p.calendar__text 幹事のイベント
+    .calendar__participationLabel
+    %p.calendar__text 参加予定のイベント
+    .calendar__eventLabel
+    %p.calendar__text その他
+  - else
+    .calendar__eventLabel
+    %p.calendar__text イベント

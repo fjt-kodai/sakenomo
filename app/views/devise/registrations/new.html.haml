@@ -1,32 +1,39 @@
-#account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 Create Account
-      %h5 新規アカウントの作成
-      = render "devise/shared/links"
-    .account-page__inner--right.user-form
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+.registrationsNew.wrapper
+  = render "/shared/header"
+
+  .registrationsNew__main.main
+    .registrationsNew__contents
+
+      .registrationsNew__titleBox
+        %h2.registrationsNew__title 新規登録
+        %p.registrationsNew__note
+          %span すでに登録済みの方は
+          = link_to "ログイン", new_user_session_path
+          %span してください。
+
+      .registrationsNew__snsAuthBox
+        = render partial: "/shared/snsAuth", locals: {str: "登録"}
+
+
+      = form_with model: @user, url: user_registration_path, class: "registrationsNew__mailAuthBox new_user", id: "new_user", local: true do |f|
         = devise_error_messages!
-        .field
-          .field-label
-            = f.label :name
-          .field-input
-            = f.text_field :name, autofocus: true
-        .field
-          .field-label
-            = f.label :email
-          .field-input
-            = f.email_field :email
-        .field
-          .field-label
-            = f.label :password
-            %i (英数字8文字以上)
-          .field-input
-            = f.password_field :password, autocomplete: "off"
-        .field
-          .field-label
-            = f.label :password_confirmation
-          .field-input
-            = f.password_field :password_confirmation, autocomplete: "off"
-        .actions
-          = f.submit "Create Account", class: 'btn'
+        .registrationsNew__formBox
+          = f.label :名前
+          = f.text_field :name, placeholder: "例: 田中太郎"
+        .registrationsNew__formBox
+          = f.label :メールアドレス
+          = f.email_field :email, placeholder: "例: tanakataro@.co.jp"
+        .registrationsNew__formBox
+          = f.label :パスワード
+          = f.password_field :password, placeholder: "6文字以上の半角英数字"
+        .registrationsNew__btnBox
+          = f.submit "メールアドレスで登録", class: "registrationsNew__Btn"
+          %i.far.fa-envelope.registrationsNew__icon
+      = form_with model: @user, url: user_session_path, class: "registrationsNew__mailAuthBox--test new_user", id: "new_user", local: true do |f|
+        .registrationsNew__btnBox
+          = f.hidden_field :email, value: "test@example.com"
+          = f.hidden_field :password, value: "test1234"
+          = f.submit "テストユーザーでログイン", class: "registrationsNew__Btn registrationsNew__Btn--test"
+          %i.fas.fa-user.registrationsNew__icon
+          
+  = render "/shared/footer"

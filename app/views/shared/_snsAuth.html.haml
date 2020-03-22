@@ -1,0 +1,21 @@
+.snsAuth
+  = link_to '#', method: :post, class: "snsAuth__slackLink" do
+    %i.fab.fa-slack.snsAuth__icon
+    %span.snsAuth__text 
+      = "Slackで#{str}" 
+
+  = link_to '#', method: :post, class: "snsAuth__githubLink" do
+    %i.fab.fa-github.snsAuth__icon
+    %span.snsAuth__text
+      = "Githubで#{str}"
+
+  = link_to '#', method: :post, class: "snsAuth__facebookLink" do
+    %i.fab.fa-facebook-f.snsAuth__icon
+    %span.snsAuth__text
+      = "Facebookで#{str}"
+
+  = link_to '#', method: :post, class: "snsAuth__twitterLink" do
+    %i.fab.fa-twitter.snsAuth__icon
+    %span.snsAuth__text 
+      = "Twitterで#{str}" 
+

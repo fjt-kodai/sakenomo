@@ -2,20 +2,21 @@
 // color pallete
 
 $color_white: #ffffff;
-$color_white-introduction: rgba(255, 255, 255, 0.8);
+$color_white-introduction: #ffffffe6;
 
-$color_orange-main: rgb(240, 174, 70);
+$color_orange-main: #fdb13e;
 $color_orange-sub: rgb(255, 166, 0);
 
 $color_grey-border: rgb(220, 220, 220);
 $color_grey-thin_border:  rgb(240, 240, 240);
 $color_grey-text: rgb(180, 180, 180);
-$color_grey-box: rgb(240, 240, 240);
+$color_grey-box: rgb(250, 250, 250);
 
 $color_black-text: rgb(60, 60, 60);
 
-$color_red-label:rgb(190, 80, 80);
-$color_green-label:rgb(70, 160, 110);
-
+$color_red-label: #E55934;
+$color_red-calendar: #E55934;
+$color_brown-label: #DAB48D;
 $color_blue-facebook: rgb(50, 115, 255);
+$color_blue-calendar: rgb(10, 80, 250);
 $color_lightblue-twitter: rgb(120, 220, 255);

@@ -1,0 +1,103 @@
+.eventsShow.wrapper
+  = render "/shared/header"
+
+  .eventsShow__main.main
+    .eventsShow__contentsBox
+
+      %h2.eventsShow__titleBox 飲み会の詳細
+
+      .eventsShow__detailBox
+        - if @event.organizer == current_user
+          = render partial: "form", locals: {event: @event}
+          
+        - else
+          %table.eventsShow__detailTable
+            %tr
+              %th タイトル
+              %td
+                = @event.title
+            %tr
+              %th 開催日
+              %td
+                - if @event.date
+                  = l(@event.date, format: :middle)
+                - else 
+                  = "未定"
+            %tr
+              %th 時間
+              %td
+                - if @event.start_time && @event.end_time
+                  = "#{l @event.start_time} 〜 #{l @event.end_time}"
+                - else 
+                  = "未定"
+            %tr
+              %th 参加費
+              %td
+                - if @event.fee
+                  = "#{@event.fee} 円"
+                - else
+                  = "未定"
+
+      .eventsShow__venueBox
+        %table.eventsShow__venueNameTable
+          %tr
+            %th お店
+            - if @event.venue_id
+              %td
+                = @venue.name
+              - if @event.organizer == current_user
+                %td.eventsShow__BtnCell
+                  = link_to "変更", "#", class: "eventsShow__venueEditBtn"
+            - else
+              %td 未定
+              - if @event.organizer == current_user
+                %td.eventsShow__BtnCell
+                  = link_to "探す", "#", class: "eventsShow__venueEditBtn"
+
+        - if @event.venue_id
+          .eventsShow__venueDetailBox
+            = image_tag @venue.shop_image1, alt: "shop_image", class: "eventsShow__venueImage"
+            %table.eventsShow__venueTable
+              %tr
+                %th 営業時間
+                %td 
+                  = @venue.opening_hours
+              %tr
+                %th 最寄り駅
+                %td 
+                  = @venue.nearest_station
+              %tr
+                %th 駅からの距離
+                %td 
+                  = "徒歩#{@venue.minutes_on_foot}分"
+              %tr
+                %th PR文
+                %td 
+                  = @venue.shop_description
+          .eventsShow__map#eventsShow__map
+
+      .eventsShow__usersBox
+        = render partial: "participant", collection: @participants
+
+  = render "/shared/footer"
+
+- if @event.venue_id
+  %script{ async: 'defer', src: "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAP_API_KEY']}&callback=initMap"}
+
+  :javascript
+    function initMap() {
+      let venue = {lat: #{@venue.latitude}, lng: #{@venue.longitude}};
+
+      let map = new google.maps.Map(
+        document.getElementById('eventsShow__map'),
+        {zoom: 17, center: venue}
+      );
+
+      let marker = new google.maps.Marker(
+        {position: venue, map: map}
+      );
+    }
+
+    window.onload = function () {
+      initMap();
+    }

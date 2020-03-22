@@ -1,12 +1,6 @@
 .homeIndex {
-  width: 100%;
-  min-height: 100vh;
-  padding-top: 60px;
-  display: flex;
-  flex-flow: column;
 
   &__main {
-    flex: 1;
     display: flex;
     justify-content: center;
   }
@@ -24,7 +18,7 @@
       }
 
       &__comments {
-        max-height: 370px;
+        max-height: 237px;
         margin-top: 20px;
         overflow-y: scroll;
       }

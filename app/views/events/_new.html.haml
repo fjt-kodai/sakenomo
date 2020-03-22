@@ -1,0 +1,8 @@
+.eventsNew__backGround#eventsNew__backGround
+.eventsNew__modal
+  = image_tag "cheers_2.jpg", alt: "image", size: "517x330", class: "eventsNew__image"
+
+  = form_with model: @event, class: "eventsNew__form", local: true do |f|
+    = f.label :飲み会名を入力してください！, class: "eventsNew__titleLabel"
+    = f.text_field :title, placeholder: "例: 新入社員歓迎会 in 2020", class: "eventsNew__titleField"
+    = f.submit "飲み会ページの作成", class: "eventsNew__submitBtn"

@@ -1,3 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $color_white;
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+  color: $color_black-text;
+  text-size-adjust: 100%;
+  line-height: 1.6;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
 body,
 div,
 dl,
@@ -27,11 +45,6 @@ td {
   padding:0;
 }
 
-table {
-  border-collapse:collapse;
-  border-spacing:0;
-}
-
 fieldset,
 img {
   border:0;
@@ -42,35 +55,19 @@ ul {
   list-style:none;
 }
 
-caption,
-th {
-  text-align:left;
-}
-
-q:before,
-q:after {
-  content:'';
-}
-
-abbr,
-acronym {
-  border:0;
-  font-variant:normal;
-}
-/* to preserve line-height and selector appearance */
-
-sup {
-  vertical-align:text-top;
-}
-
-sub {
-  vertical-align:text-bottom;
-}
-
-/* YUI CSS Detection Stamp */
-#yui3-css-stamp.cssreset { display: none; }
-
 a {
   text-decoration: none;
   color: $color_black-text;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 60px;
+  display: flex;
+  flex-flow: column;
+}
+
+.main {
+  flex: 1;
 }

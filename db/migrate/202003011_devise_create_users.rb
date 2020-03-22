@@ -4,9 +4,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       ## Database authenticatable
-      t.string :name,               null: false, unique: true, index: true
-      t.string :icon_image
-      t.string :email,              null: false, default: ""
+      t.string :name, null: false, unique: true, index: true
+      t.string :email
+      t.string :icon, null: false, default: "user_icon_default.png"
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable

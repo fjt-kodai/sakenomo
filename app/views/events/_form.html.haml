@@ -1,0 +1,76 @@
+= form_with model: event, class: 'eventsShow__form' do |f|
+  %table.eventsShow__detailTable
+    %tr.eventsShow__defaultShow#title__defaultShow
+      %th タイトル
+      %td
+        = event.title
+      %td.eventsShow__BtnCell
+        %i.fas.fa-edit.eventsShow__editBtn
+
+    %tr.eventsShow__defaultHidden#title__defaultHidden{style: 'display: none'}
+      %th タイトル
+      %td
+        .eventsShow__textForm
+          = f.text_field :title, placeholder: "例: 新入社員歓迎会 in 2020", class: 'eventsShow__textField'
+          %i.fas.fa-times.eventsShow__crossBtn
+      %td.eventsShow__BtnCell
+        = f.submit "変更", type: 'submit', class: 'eventsShow__submitBtn'
+
+    %tr.eventsShow__defaultShow#date__defaultShow
+      %th 開催日
+      %td
+        - if @event.date
+          = l(@event.date, format: :middle)
+        - else 
+          = "未定"
+      %td.eventsShow__BtnCell
+        %i.fas.fa-edit.eventsShow__editBtn
+
+    %tr.eventsShow__defaultHidden#date__defaultHidden{style: 'display: none'}
+      %th 開催日
+      %td
+        .eventsShow__textForm
+          = f.date_field :date, class: 'eventsShow__textField'
+          %i.fas.fa-times.eventsShow__crossBtn
+      %td.eventsShow__BtnCell
+        = f.submit "変更", type: 'submit', class: 'eventsShow__submitBtn'
+
+    %tr.eventsShow__defaultShow#times__defaultShow
+      %th 時間
+      %td
+        - if @event.start_time && @event.end_time
+          = "#{l @event.start_time} 〜 #{l @event.end_time}"
+        - else 
+          = "未定"
+      %td.eventsShow__BtnCell
+        %i.fas.fa-edit.eventsShow__editBtn
+
+    %tr.eventsShow__defaultHidden#times__defaultHidden{style: 'display: none'}
+      %th 時間
+      %td
+        .eventsShow__timesForm
+          = f.time_select :start_time, class: 'eventsShow__timeField form-control', minute_step: 10
+          %span 〜
+          = f.time_select :end_time, class: 'eventsShow__timeField form-control', minute_step: 10
+          %i.fas.fa-times.eventsShow__crossBtn
+      %td.eventsShow__BtnCell
+        = f.submit "変更", type: 'submit', class: 'eventsShow__submitBtn'
+
+    %tr.eventsShow__defaultShow#fee__defaultShow
+      %th 参加費
+      %td
+        - if event.fee
+          = "#{event.fee} 円"
+        - else
+          = "未定"
+      %td.eventsShow__BtnCell
+        %i.fas.fa-edit.eventsShow__editBtn
+
+    %tr.eventsShow__defaultHidden#fee__defaultHidden{style: 'display: none'}
+      %th 参加費
+      %td
+        .eventsShow__textForm
+          = f.text_field :fee, placeholder: "例: 3000", class: 'eventsShow__textField'
+          %i.fas.fa-times.eventsShow__crossBtn
+      %td.eventsShow__BtnCell
+        = f.submit "変更", type: 'submit', class: 'eventsShow__submitBtn'

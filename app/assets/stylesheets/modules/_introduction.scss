@@ -8,7 +8,7 @@
     }
 
   &__contents {
-    width: 600px;
+    width: 800px;
     height: 60%;
     padding: 40px;
     background: $color_white-introduction;
@@ -27,17 +27,18 @@
 
   &__catchCopy {
     color: $color_orange-main;
-    letter-spacing: 4px;
   }
 
     &__mainCopy {
-      font-size: 32px;
+      font-size: 40px;
       font-weight: bold;
       margin-bottom: 5px;
+      letter-spacing: 4px;
     }
 
     &__subCopy {
-      font-size: 13px;
+      font-size: 16px;
+      letter-spacing: 2px;
     }
 
     &__registerBtn {

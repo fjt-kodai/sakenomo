@@ -1,9 +1,4 @@
-.usersIndex {
-  width: 100%;
-  min-height: 100vh;
-  padding-top: 60px;
-  display: flex;
-  flex-flow: column;
+.usersShow {
   align-items: center;
 
   &__image {
@@ -11,7 +6,6 @@
   }
 
   &__main {
-    flex: 1;
     display: flex;
     justify-content: center;
   }
@@ -24,12 +18,12 @@
         margin-bottom: 60px;
       }
 
-      &__rightTopContent {
-        padding: 60px 30px 30px 40px;
+      &__leftMiddleContent {
+        margin-bottom: 60px;
       }
 
-      &__rightMiddleContent {
-        padding: 30px 30px 40px 40px;
+      &__rightTopContent {
+        padding: 60px 30px 30px 40px;
       }
 
       &__rightBottomContent {
@@ -37,7 +31,7 @@
       }
 
       &__comments {
-        max-height: 370px;
+        max-height: 468px;
         margin-top: 20px;
         overflow-y: scroll;
       }

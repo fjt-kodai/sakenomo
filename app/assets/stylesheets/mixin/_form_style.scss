@@ -1,0 +1,12 @@
+@mixin form_style() {
+  box-shadow: none;
+  border: 1px solid $color_grey-thin_border;
+  background-color: $color_grey-box;
+  transition: all .2s;
+
+  &:focus {
+    border: 1px solid $color_orange-main;
+    outline: 0;
+    background-color: $color_white;
+  }
+}
