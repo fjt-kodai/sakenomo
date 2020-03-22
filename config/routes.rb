@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
-  root "home#index"
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
 
-  resources :users, only: [:index]
+  root "home#index"
+  resources :home, only: [:index]
+  resources :users, except: [:index]
+  resources :events
+  resources :venues, only: [:index, :new, :create, :edit, :update]
+  resources :participants, only: [:create, :destroy]
 
 end
