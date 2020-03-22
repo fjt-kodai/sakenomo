@@ -1,2 +1,2 @@
-class venuesController < ApplicationController
+class VenuesController < ApplicationController
 end
