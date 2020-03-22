@@ -9,3 +9,4 @@ id,name,email,icon,password
 8,Abe Kanako,abekanako@test,user_icon_2.png,abekanako
 9,Hashimoto Miku,hashimotomiku@test,user_icon_10.png,hashimotomiku
 10,Matsui Shintaro,matsuishintaro@test,user_icon_12.png,matsuishintaro
+11,テストユーザー,test@example.com,user_icon_12.png,test1234
