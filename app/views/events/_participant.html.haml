@@ -1,20 +1,4 @@
-%table.eventsShow__usersTable
-  %tr
-    %th.eventsShow__organizerIndex 幹事
-    %td.eventsShow__organizer
-      = image_tag @event.organizer.icon, alt: "user_icon", class: "eventsShow__organizerIcon"
-      %span.eventsShow__organizerName
-        = @event.organizer.name
-
-  %tr
-    %th.eventsShow__participantsIndex 参加者
-    %td.eventsShow__participants
-      .eventsShow__participant
-        = image_tag participants.icon, alt: "user_icon", class: "eventsShow__participantIcon"
-        %span.eventsShow__participantName
-          = participants.name
-- if event.users.ids.include?(current_user&.id)
-  = link_to "参加を取り消す", participant_path(paticipant.id), method: :destroy, remote: true, class: "eventsShow__participationBtn"
-- elsif current_user&.id != event.organizer.id
-  = link_to "参加する", participants_path, event_id: params[:id], method: :put, remote: true, class: "eventsShow__participationBtn"
-
+.eventsShow__participant
+  = image_tag participant.icon, alt: "user_icon", class: "eventsShow__participantIcon"
+  %span.eventsShow__participantName
+    = participant.name

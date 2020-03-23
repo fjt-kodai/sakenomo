@@ -1,16 +1,15 @@
 class ParticipantsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
-    @event = Event.find(params[:event_id])
     @participant = Participant.create(user_id: current_user.id, event_id: params[:event_id])
-    @participants = @event.users
+    @event = Event.find(params[:event_id])
   end
 
   def destroy
-    @event = Event.find(params[:id])
     @participant = Participant.find(params[:id])
-    @participants = @event.users
-    participant.destroy
+    @event = @participant.event
+    @participant.destroy
   end
 
 end

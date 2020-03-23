@@ -1,1 +1,2 @@
-$(".eventsShow__usersBox").html("#{j(render partial: 'events/participants',collection: @participants, locals: {participant: @participant, event: @event})}");
+$(".eventsShow__participants").html("#{j(render partial: 'events/participant',collection: @event.users, as: "participant")}");
+$(".eventsShow__participationBtnBox").html("#{j(render partial: 'events/participationBtn',locals: {event: @event, participant: @participant})}");
