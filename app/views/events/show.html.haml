@@ -77,7 +77,21 @@
           .eventsShow__map#eventsShow__map
 
       .eventsShow__usersBox
-        = render partial: "participant", collection: @participants
+        %table.eventsShow__usersTable
+          %tr
+            %th.eventsShow__organizerIndex 幹事
+            %td.eventsShow__organizer
+              = image_tag @event.organizer.icon, alt: "user_icon", class: "eventsShow__organizerIcon"
+              %span.eventsShow__organizerName
+                = @event.organizer.name
+
+          %tr
+            %th.eventsShow__participantsIndex 参加者
+            %td.eventsShow__participants
+              = render partial: "participant", collection: @event.users, as: "participant"
+        
+        .eventsShow__participationBtnBox
+          = render partial: "participationBtn", locals: {event: @event, participant: @participant}
 
   = render "/shared/footer"
 

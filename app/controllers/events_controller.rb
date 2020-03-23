@@ -18,10 +18,7 @@ class EventsController < ApplicationController
 
   def show
     @venue = @event.venue if @event.venue_id
-    @participants = @event.users
-    if @event.users.ids.include?(current_user&.id)
-      @participant = Participant.where(user_id: current_user.id, event_id: params[:id])
-    end
+    @participant = Participant.find_by(user_id: current_user&.id, event_id: params[:id])
   end
 
   def update
