@@ -1,24 +1,43 @@
-# README
+# さけのも
+## 概要
+飲み会にフォーカスしたイベント管理アプリです。
+幹事の方は飲み会を企画し、参加者を募ることができます。
+幹事以外の方は飲み会を探し、参加者として登録することができます。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 使い方
+URL:
+http://18.180.25.39/
 
-Things you may want to cover:
+ログイン画面もしくは新規登録画面からテストユーザーでログインできます。
 
-* Ruby version
+## 作成の背景
+飲み会における「幹事業務の効率化」と「参加人数の向上」を目的としています。
+幹事はお店探しや、出席者の確認をすることができます。
+また、参加者は飲み会の会場や他の出席者を事前に知ることができます。
 
-* System dependencies
+## 使用技術
+### フロントエンド
+* Haml
+* Scss
+* jQuery
 
-* Configuration
+### サーバーサイド
+* Ruby 2.5.1
+* Ruby on Rails 5.2.4
 
-* Database creation
+### ミドルウェア
+* Nginx 1.16.1
+* Unicorn 5.4.1
+* MySQL 5.6.47
+* AWS(EC2, S3)
+* Capistrano3
 
-* Database initialization
+## 実装機能
+* ユーザー登録 / ログイン / ログアウト
+* 飲み会イベントの作成 
+* 飲み会の参加/参加取り消し
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 実装予定機能
+* SNS認証
+* コメント投稿/削除
+* お店の検索 / 登録
