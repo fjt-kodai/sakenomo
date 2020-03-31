@@ -24,6 +24,9 @@
           = f.label :メールアドレス
           = f.email_field :email, placeholder: "例: tanakataro@.co.jp"
         .registrationsNew__formBox
+          = f.label :イメージ
+          = f.file_field :icon
+        .registrationsNew__formBox
           = f.label :パスワード
           = f.password_field :password, placeholder: "6文字以上の半角英数字"
         .registrationsNew__btnBox
