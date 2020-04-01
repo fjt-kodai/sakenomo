@@ -1,21 +1,59 @@
-#account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 Edit Account
-      %h5 アカウントの編集
-      = link_to "ログアウト", '#', class: 'btn'
-      = link_to "トップページに戻る", :back, class: 'btn'
-    .account-page__inner--right.user-form
-      = form_for(current_user) do |f|
-        .field
-          .field-label
-            = f.label :name
-          .field-input
-            = f.text_field :name, autofocus: true
-        .field
-          .field-label
-            = f.label :email
-          .field-input
-            = f.email_field :email
-        .actions
-          = f.submit "Update", class: 'btn'
+.usersEdit.wrapper
+  = render "/shared/header"
+
+  .usersEdit__main.main
+    .usersEdit__contentsBox
+
+      %h2.usersEdit__titleBox アカウント編集
+
+      .usersEdit__detailBox
+        = form_with model: @user, class: 'usersEdit__form' do |f|
+          %table.usersEdit__detailTable
+            %tr.usersEdit__defaultShow#title__defaultShow
+              %th ユーザー名
+              %td
+                = current_user.name
+              %td.usersEdit__BtnCell
+                %i.fas.fa-edit.usersEdit__editBtn
+
+            %tr.usersEdit__defaultHidden#title__defaultHidden{style: 'display: none'}
+              %th ユーザー名
+              %td
+                .usersEdit__textForm
+                  = f.text_field :name, placeholder: "例: 田中太郎", class: 'usersEdit__textField'
+                  %i.fas.fa-times.usersEdit__crossBtn
+              %td.usersEdit__BtnCell
+                = f.submit "変更", type: 'submit', class: 'usersEdit__submitBtn'
+
+            %tr.usersEdit__defaultShow#times__defaultShow
+              %th アイコン
+              %td
+                = image_tag current_user.icon, alt: "user_icon", class: "usersEdit__userIcon"
+              %td.usersEdit__BtnCell
+                %i.fas.fa-edit.usersEdit__editBtn
+
+            %tr.usersEdit__defaultHidden#times__defaultHidden{style: 'display: none'}
+              %th アイコン
+              %td
+                .usersEdit__timesForm
+                  = f.file_field :icon
+                  %i.fas.fa-times.usersEdit__crossBtn
+              %td.usersEdit__BtnCell
+                = f.submit "変更", type: 'submit', class: 'usersEdit__submitBtn'
+
+            %tr.usersEdit__defaultShow#date__defaultShow
+              %th メールアドレス
+              %td
+                = current_user.email
+              %td.usersEdit__BtnCell
+                %i.fas.fa-edit.usersEdit__editBtn
+
+            %tr.usersEdit__defaultHidden#date__defaultHidden{style: 'display: none'}
+              %th メールアドレス
+              %td
+                .usersEdit__textForm
+                  = f.text_field :email, placeholder: "例: xxx@gmail.co.jp", class: 'usersEdit__textField'
+                  %i.fas.fa-times.usersEdit__crossBtn
+              %td.usersEdit__BtnCell
+                = f.submit "変更", type: 'submit', class: 'usersEdit__submitBtn'
+
