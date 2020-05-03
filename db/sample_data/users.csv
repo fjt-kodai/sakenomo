@@ -1,4 +1,4 @@
-id,name,email,icon,password
+id,name,email,image,password
 1,Fujita Kodai,fujitakodai@test,user_icon_4.png,fujitakodai
 2,Tanaka Taro,tanakataro@test,user_icon_12.png,tanakataro
 3,Yamada Hanako,yamadahanako@test,user_icon_1.png,yamadahanako
