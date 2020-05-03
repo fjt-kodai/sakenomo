@@ -12,7 +12,7 @@ CSV.foreach('db/sample_data/users.csv', headers: true) do |row|
   User.create(
     id: row['id'],
     name: row['name'],
-    icon: row['icon'],
+    image: row['image'],
     email: row['email'],
     password: row['password']
   )
