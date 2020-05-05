@@ -5,4 +5,6 @@ class Comment < ApplicationRecord
   
   validates :event_id, :user_id, presence: true
   validates :content, presence: true, unless: :image?
+
+  mount_uploader :image, ImageUploader
 end
