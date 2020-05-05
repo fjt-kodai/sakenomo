@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-
-  def edit
-  end
   
   def show
     @organized_events = Event.where('date >= ? and organizer_id = ?', Date.today, current_user.id).limit(5)
