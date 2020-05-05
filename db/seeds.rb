@@ -57,3 +57,13 @@ CSV.foreach('db/sample_data/participants.csv', headers: true) do |row|
     event_id: row['event_id']
   )
 end
+
+CSV.foreach('db/sample_data/comments.csv', headers: true) do |row|
+  Comment.create(
+    id: row['id'],
+    content: row['content'],
+    image: row['image'],
+    user_id: row['user_id'],
+    event_id: row['event_id']
+  )
+end
