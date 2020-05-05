@@ -220,6 +220,7 @@
             height: 200px;
             width: 200px;
             border-radius: 6px;
+            object-fit: cover;
           }
 
           &__venueTable {
@@ -239,7 +240,6 @@
               border-bottom: solid 1px rgb(221, 221, 221);
               padding: 8px;
             }
-
           }
 
         &__map {
