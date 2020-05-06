@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @events = Event.where('date >= ?', Date.today).limit(5)
     @events_all = Event.all
     gon.user_id = current_user.id
+    @comments = current_user.comments.limit(30)
   end
 
 end

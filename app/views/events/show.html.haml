@@ -93,6 +93,18 @@
         .eventsShow__participationBtnBox
           = render partial: "participationBtn", locals: {event: @event, participant: @participant}
 
+    .eventsShow__commentsBox
+      %h2.eventsShow__commentsTitleBox コメント
+      = render partial: "comment", collection: @comments
+      .eventsShow__commentForm
+        = form_with model: [@event, @comment], class: 'eventsShow__commentForm', local: true do |f|
+          .eventsShow__commentFormBox
+            = f.text_field :content, class: 'eventsShow__contentField', placeholder: 'コメントを入力してください'
+            = f.label :image, class: 'eventsShow__imageBox' do
+              %i.far.fa-image
+              = f.file_field :image, class: "eventsShow__fileField"
+          = f.submit "送信", class: "eventsShow__commentSubmitBtn"
+
   = render "/shared/footer"
 
 - if @event.venue_id

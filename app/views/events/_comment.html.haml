@@ -1,0 +1,12 @@
+.eventsShow__comment
+  .eventsShow__commentInfo
+    .eventsShow__commentUser
+      = image_tag comment.user.image, alt: "user_icon", class: "eventsShow__commentUserIcon"
+      .eventsShow__commentUserName
+        = comment.user.name
+    .eventsShow__commentDate
+      = "#{time_ago_in_words(comment.created_at)}前"
+  .eventsShow__commentContent
+    = comment.content
+  .eventsShow__commentImageBox
+    = image_tag comment.image.url, size: '100x100', alt: "comment_image", class: "eventsShow__commentImage" if comment.image.present?
