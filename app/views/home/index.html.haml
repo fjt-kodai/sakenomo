@@ -12,10 +12,5 @@
     .homeIndex__rightContents
       .homeIndex__rightTopContent
         = render "/shared/calendar"
-      .homeIndex__rightBottomContent
-        = render partial: "/shared/title", locals: {title: "最近のコメント"}
-        .homeIndex__comments
-          = render "/shared/comment"
-        = render partial: "/shared/bottomLink", locals: {link: root_path, title: "コメント一覧"}
 
   = render "/shared/footer"

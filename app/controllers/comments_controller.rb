@@ -3,12 +3,12 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @event.comments.new(comment_params)
-    if @message.save
+    if @comment.save
       redirect_to event_path(@event), notice: 'コメントが投稿されました'
     else
-      @messages = @group.messages.includes(:user)
+      # @messages = @group.messages.includes(:user)
       flash.now[:alert] = 'コメントを入力してください。'
-      render event_path(@event)
+      redirect_to event_path(@event)
     end
   end
 

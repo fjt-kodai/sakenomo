@@ -97,7 +97,7 @@
       %h2.eventsShow__commentsTitleBox コメント
       = render partial: "comment", collection: @comments
       .eventsShow__commentForm
-        = form_with model: @comment, class: 'eventsShow__commentForm' do |f|
+        = form_with model: [@event, @comment], class: 'eventsShow__commentForm', local: true do |f|
           .eventsShow__commentFormBox
             = f.text_field :content, class: 'eventsShow__contentField', placeholder: 'コメントを入力してください'
             = f.label :image, class: 'eventsShow__imageBox' do
