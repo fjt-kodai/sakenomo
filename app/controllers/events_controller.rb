@@ -20,6 +20,7 @@ class EventsController < ApplicationController
     @venue = @event.venue if @event.venue_id
     @participant = Participant.find_by(user_id: current_user&.id, event_id: params[:id])
     @comments = @event.comments
+    @comment = Comment.new
   end
 
   def update
