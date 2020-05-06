@@ -1,98 +1,15 @@
 .comment
   .comment__infoBox
     .comment__userBox
-      = image_tag "user_icon_default.png", alt: "sample1", class: "comment__userIcon"
-      .comment__userName Tanaka Taro
-    .comment__date 3日前
-  .comment__content めちゃ美味しかった！4月もまた行きましょ〜！あああああああああああああああああああああああああああああああああ
+      = image_tag comment.user.image, alt: "user_icon", class: "comment__userIcon"
+      .comment__userName
+        = comment.user.name
+    .comment__date
+      = time_ago_in_words(comment.created_at) 
+  .comment__content
+    = comment.content
+  .comment__imageBox
+    = image_tag comment.image.url, size: '100x100', alt: "comment_image", class: "comment__image" if comment.image.present?
   .comment__eventTitleBox
     .comment__eventTitleIndex in&nbsp;
-    = link_to "女子限定お肉の会", root_path, class: "comment__eventTitle"
-
-.comment
-  .comment__infoBox
-    .comment__userBox
-      = image_tag "user_icon_default.png", alt: "sample1", class: "comment__userIcon"
-      .comment__userName Tanaka Taro
-    .comment__date 3日前
-  .comment__content めちゃ美味しかった！4月もまた行きましょ〜！
-  .comment__eventTitleBox
-    .comment__eventTitleIndex in&nbsp;
-    = link_to "女子限定お肉の会", root_path, class: "comment__eventTitle"
-
-.comment
-  .comment__infoBox
-    .comment__userBox
-      = image_tag "user_icon_default.png", alt: "sample1", class: "comment__userIcon"
-      .comment__userName Tanaka Taro
-    .comment__date 3日前
-  .comment__content めちゃ美味しかった！4月もまた行きましょ〜！
-  .comment__eventTitleBox
-    .comment__eventTitleIndex in&nbsp;
-    = link_to "女子限定お肉の会", root_path, class: "comment__eventTitle"
-
-.comment
-  .comment__infoBox
-    .comment__userBox
-      = image_tag "user_icon_default.png", alt: "sample1", class: "comment__userIcon"
-      .comment__userName Tanaka Taro
-    .comment__date 3日前
-  .comment__content めちゃ美味しかった！4月もまた行きましょ〜！
-  .comment__eventTitleBox
-    .comment__eventTitleIndex in&nbsp;
-    = link_to "女子限定お肉の会", root_path, class: "comment__eventTitle"
-
-.comment
-  .comment__infoBox
-    .comment__userBox
-      = image_tag "user_icon_default.png", alt: "sample1", class: "comment__userIcon"
-      .comment__userName Tanaka Taro
-    .comment__date 3日前
-  .comment__content めちゃ美味しかった！4月もまた行きましょ〜！
-  .comment__eventTitleBox
-    .comment__eventTitleIndex in&nbsp;
-    = link_to "女子限定お肉の会", root_path, class: "comment__eventTitle"
-
-.comment
-  .comment__infoBox
-    .comment__userBox
-      = image_tag "user_icon_default.png", alt: "sample1", class: "comment__userIcon"
-      .comment__userName Tanaka Taro
-    .comment__date 3日前
-  .comment__content めちゃ美味しかった！4月もまた行きましょ〜！
-  .comment__eventTitleBox
-    .comment__eventTitleIndex in&nbsp;
-    = link_to "女子限定お肉の会", root_path, class: "comment__eventTitle"
-
-.comment
-  .comment__infoBox
-    .comment__userBox
-      = image_tag "user_icon_default.png", alt: "sample1", class: "comment__userIcon"
-      .comment__userName Tanaka Taro
-    .comment__date 3日前
-  .comment__content めちゃ美味しかった！4月もまた行きましょ〜！
-  .comment__eventTitleBox
-    .comment__eventTitleIndex in&nbsp;
-    = link_to "女子限定お肉の会", root_path, class: "comment__eventTitle"
-
-.comment
-  .comment__infoBox
-    .comment__userBox
-      = image_tag "user_icon_default.png", alt: "sample1", class: "comment__userIcon"
-      .comment__userName Tanaka Taro
-    .comment__date 3日前
-  .comment__content めちゃ美味しかった！4月もまた行きましょ〜！
-  .comment__eventTitleBox
-    .comment__eventTitleIndex in&nbsp;
-    = link_to "女子限定お肉の会", root_path, class: "comment__eventTitle"
-
-.comment
-  .comment__infoBox
-    .comment__userBox
-      = image_tag "user_icon_default.png", alt: "sample1", class: "comment__userIcon"
-      .comment__userName Tanaka Taro
-    .comment__date 3日前
-  .comment__content めちゃ美味しかった！4月もまた行きましょ〜！
-  .comment__eventTitleBox
-    .comment__eventTitleIndex in&nbsp;
-    = link_to "女子限定お肉の会", root_path, class: "comment__eventTitle"
+    = link_to "#{comment.event.title}", event_path(comment.event_id), class: "comment__eventTitle"

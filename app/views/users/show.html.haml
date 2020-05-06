@@ -23,9 +23,9 @@
       .usersShow__rightTopContent
         = render "/shared/calendar"
       .usersShow__rightBottomContent
-        = render partial: "/shared/title", locals: {title: "最近のコメント"}
+        = render partial: "/shared/title", locals: {title: "あなたの最近のコメント"}
         .usersShow__comments
-          = render "/shared/comment"
+          = render partial: '/shared/comment', collection: @comments
         = render partial: "/shared/bottomLink", locals: {link: root_path, title: "コメント一覧"}
 
   = render "/shared/footer"
