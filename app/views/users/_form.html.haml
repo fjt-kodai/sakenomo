@@ -1,0 +1,52 @@
+= form_with model: user, class: 'usersEdit__form' do |f|
+  %table.usersEdit__detailTable
+    %tr.usersEdit__defaultShow#title__defaultShow
+      %th ユーザー名
+      %td
+        = user.name
+      %td.usersEdit__BtnCell
+        %i.fas.fa-edit.usersEdit__editBtn
+
+    %tr.usersEdit__defaultHidden#title__defaultHidden{style: 'display: none'}
+      %th ユーザー名
+      %td
+        .usersEdit__textForm
+          = f.text_field :name, placeholder: "例: 田中太郎", class: 'usersEdit__textField'
+          %i.fas.fa-times.usersEdit__crossBtn
+      %td.usersEdit__BtnCell
+        = f.submit "変更", type: 'submit', class: 'usersEdit__submitBtn'
+
+    %tr.usersEdit__defaultShow#date__defaultShow
+      %th メールアドレス
+      %td
+        = user.email
+      %td.usersEdit__BtnCell
+        %i.fas.fa-edit.usersEdit__editBtn
+
+    %tr.usersEdit__defaultHidden#date__defaultHidden{style: 'display: none'}
+      %th メールアドレス
+      %td
+        .usersEdit__textForm
+          = f.text_field :email, class: 'usersEdit__textField'
+          %i.fas.fa-times.usersEdit__crossBtn
+      %td.usersEdit__BtnCell
+        = f.submit "変更", type: 'submit', class: 'usersEdit__submitBtn'
+
+    %tr.usersEdit__defaultShow#times__defaultShow
+      %th アイコン
+      %td
+        = user.image
+      %td.usersEdit__BtnCell
+        %i.fas.fa-edit.usersEdit__editBtn
+
+    %tr.usersEdit__defaultHidden#times__defaultHidden{style: 'display: none'}
+      %th アイコン
+      %td
+        .usersEdit__timesForm
+          = f.file_field class: 'usersEdit__timeField form-control', minute_step: 10
+
+          %i.fas.fa-times.usersEdit__crossBtn
+      %td.usersEdit__BtnCell
+        = f.submit "変更", type: 'submit', class: 'usersEdit__submitBtn'
+
+-# ----------------------------------------------------------------------------------------------------
